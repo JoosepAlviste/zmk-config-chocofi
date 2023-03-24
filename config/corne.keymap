@@ -19,7 +19,7 @@
 // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |
 //             | ESC | NAV | SFT |   | SPC | NUM  | BSPC |
             bindings = <
-     &kp Q &kp W &kp F   &kp P &kp G        &kp J       &kp L &kp U     &kp Y   &kp ;
+     &kp Q &kp W &kp F   &kp P &kp G        &kp J       &kp L &kp U     &kp Y   &kp SEMI
      &kp A &kp R &kp S   &kp T &kp D        &kp H       &kp N &kp E     &kp I   &kp O
      &kp Z &kp X &kp C   &kp V &kp B        &kp K       &kp M &kp COMMA &kp DOT &kp FSLH
                  &kp ESC &mo 1 &kp LSHIFT   &lt 3 SPACE &mo 2 &kp BSPC
