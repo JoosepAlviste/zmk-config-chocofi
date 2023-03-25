@@ -19,7 +19,7 @@
 // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |
 //             | ESC | NAV | SFT |   | SPC | NUM  | BSPC |
             bindings = <
-     &kp Q &kp W &kp F   &kp P &kp G        &kp J       &kp L &kp U     &kp Y   &kp SEMI
+     &kp Q &kp W &kp F   &kp P &kp G        &kp J       &kp L &kp U     &kp Y   &kp SQT
      &kp A &kp R &kp S   &kp T &kp D        &kp H       &kp N &kp E     &kp I   &kp O
      &kp Z &kp X &kp C   &kp V &kp B        &kp K       &kp M &kp COMMA &kp DOT &kp FSLH
                  &kp ESC &mo 1 &kp LSHIFT   &lt 3 SPACE &mo 2 &kp BSPC
@@ -32,7 +32,7 @@
 // |     |     | PREV | NEXT | PLAY     |   |      |      |     |       |      |
 //             |      |      |          |   |      |      |     |
             bindings = <
-   &trans    &trans   &trans     &trans     &kp C_VOL_UP   &trans   &trans   &trans &trans    &kp DEL
+   &trans    &trans   &prev_tab  &next_tab  &kp C_VOL_UP   &trans   &trans   &trans &trans    &kp DEL
    &sk LCTRL &sk LALT &sk LCMD   &sk LSHIFT &kp C_VOL_DN   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp CAPS
    &trans    &trans   &kp C_PREV &kp C_NEXT &kp C_PP       &trans   &trans   &trans &trans    &trans
                                &trans &trans &trans   &trans   &trans   &trans
@@ -96,6 +96,33 @@
             timeout-ms = <50>;
             key-positions = <27 28>;
             bindings = <&kp UNDERSCORE>;
+        };
+    };
+};
+
+/ {
+    macros {
+        next_tab: zed_em_kay {
+            label = "next_tab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        prev_tab: zed_em_kay {
+            label = "prev_tab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_release &kp LCTRL>
+                ;
         };
     };
 };
