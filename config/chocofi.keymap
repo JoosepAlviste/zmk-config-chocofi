@@ -102,7 +102,7 @@
 
 / {
     macros {
-        next_tab: zed_em_kay {
+        next_tab: next_tab {
             label = "next_tab";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -112,7 +112,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        prev_tab: zed_em_kay {
+        prev_tab: prev_tab {
             label = "prev_tab";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
