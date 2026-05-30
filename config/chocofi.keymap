@@ -32,7 +32,7 @@
 // |      |     | PREV  | NEXT    | PLAY     |   |      |       |         |       | LANG |
 //              |       |         |          |   |      |       |         |
             bindings = <
-   &kp BSPC  &trans   &kp LS(LC(TAB)) &kp LC(TAB)  &kp C_VOL_UP   &kp Q    &swapper_rev &swapper &trans    &kp DEL
+   &kp BSPC  &trans   &kp LS(LC(TAB)) &kp LC(TAB)  &kp C_VOL_UP   &kp Q    &kp LS(TAB)  &swapper &trans    &kp DEL
    &sk LCTRL &sk LALT &sk LCMD        &sk LSHIFT   &kp C_VOL_DN   &kp LEFT &kp DOWN     &kp UP   &kp RIGHT &kp CAPS
    &trans    &trans   &kp C_PREV      &kp C_NEXT   &kp C_PP       &trans   &trans       &trans   &trans    &kp LA(LG(SPACE))
                       &trans          &trans       &trans         &trans   &trans       &trans
@@ -76,12 +76,6 @@
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             ignored-key-positions = <5 6>;
-        };
-        swapper_rev: swapper_rev {
-            compatible = "zmk,behavior-tri-state";
-            #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp LS(TAB)>, <&kt LGUI>;
-            ignored-key-positions = <5 7>;
         };
     };
 
