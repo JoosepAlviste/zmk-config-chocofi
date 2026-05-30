@@ -75,13 +75,13 @@
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <5 7>;
+            ignored-key-positions = <5 6>;
         };
         swapper_rev: swapper_rev {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp LS(TAB)>, <&kt LGUI>;
-            ignored-key-positions = <5 6>;
+            ignored-key-positions = <5 7>;
         };
     };
 
