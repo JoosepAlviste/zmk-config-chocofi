@@ -27,12 +27,12 @@
         };
         nav_layer {
 // -----------------------------------------------------------------------------------------
-// | BSPC |     | C+TAB | C+S+TAB | VOL UP   |   |      | G+TAB | G+S+TAB |       | DEL  |
+// | BSPC |     | C+TAB | C+S+TAB | VOL UP   |   |  Q   | SWAP> |  <SWAP  |       | DEL  |
 // |      |     |       |         | VOL DOWN |   | LEFT | DOWN  | UP      | RIGHT | CAPS |
 // |      |     | PREV  | NEXT    | PLAY     |   |      |       |         |       | LANG |
 //              |       |         |          |   |      |       |         |
             bindings = <
-   &kp BSPC  &trans   &kp LS(LC(TAB)) &kp LC(TAB)  &kp C_VOL_UP   &trans   &kp LG(TAB) &kp LG(LS(TAB)) &trans    &kp DEL
+   &kp BSPC  &trans   &kp LS(LC(TAB)) &kp LC(TAB)  &kp C_VOL_UP   &kp Q    &swapper    &kp LS(TAB)     &trans    &kp DEL
    &sk LCTRL &sk LALT &sk LCMD        &sk LSHIFT   &kp C_VOL_DN   &kp LEFT &kp DOWN    &kp UP          &kp RIGHT &kp CAPS
    &trans    &trans   &kp C_PREV      &kp C_NEXT   &kp C_PP       &trans   &trans      &trans          &trans    &kp LA(LG(SPACE))
                       &trans          &trans       &trans         &trans   &trans      &trans
@@ -67,9 +67,18 @@
             >;
         };
     };
-};
 
-/ {
+    // Enables window switching keybindings on the nav layer. Hold the nav layer 
+    // to keep showing the macOS window switcher UI.
+    behaviors {
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <5 7>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_tab {
