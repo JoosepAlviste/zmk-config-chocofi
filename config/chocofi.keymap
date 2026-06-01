@@ -32,10 +32,10 @@
 // | AUD1 | AUD2 | PREV  | NEXT    | PLAY     |   |      |       |         |       | LANG |
 //               |       |         |          |   | SPC  |       |         |
             bindings = <
-   &kp BSPC                 &trans                   &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP   &kp Q     &kp LS(TAB)  &swapper &trans    &kp DEL
-   &sk LCTRL                &sk LALT                 &sk LCMD        &sk LSHIFT  &kp C_VOL_DN   &kp LEFT  &kp DOWN     &kp UP   &kp RIGHT &kp CAPS
-   &kp LG(LC(LS(LALT(N1)))) &kp LG(LC(LS(LALT(N2)))) &kp C_PREV      &kp C_NEXT  &kp C_PP       &trans    &trans       &trans   &trans    &kp LA(LG(SPACE))
-                                                     &trans          &trans      &trans         &kp SPACE &trans       &trans
+   &kp BSPC               &trans                 &kp LS(LC(TAB)) &kp LC(TAB) &kp C_VOL_UP   &kp Q     &kp LS(TAB)  &swapper &trans    &kp DEL
+   &sk LCTRL              &sk LALT               &sk LCMD        &sk LSHIFT  &kp C_VOL_DN   &kp LEFT  &kp DOWN     &kp UP   &kp RIGHT &kp CAPS
+   &kp LG(LC(LS(LA(N1)))) &kp LG(LC(LS(LA(N2)))) &kp C_PREV      &kp C_NEXT  &kp C_PP       &trans    &trans       &trans   &trans    &kp LA(LG(SPACE))
+                                                 &trans          &trans      &trans         &kp SPACE &trans       &trans
             >;
         };
 
